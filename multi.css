@@ -1,0 +1,68 @@
+.footers a {
+    color:rgb(59, 59, 59);
+    font-weight: bold;
+    text-decoration: none;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+.footers a:hover {
+    color:rgb(0, 41, 88);
+    text-decoration: underline;
+}
+
+hr {
+    height:2px;
+    border-radius: 5px;
+    border:1px ridge rgb(209, 209, 209);
+    background-color: rgb(238, 238, 238);
+    margin:4px 0px;
+}
+
+
+
+/* Button styling */
+:root {
+    --bgbutton: #aaa;
+    --bgborder: color-mix(in srgb, var(--bgbutton) 83%, rgb(0, 0, 0));
+}
+
+button {
+    border-radius: 3px;
+    border:1px solid var(--bgborder);
+    padding:5px 7px;
+    background-color: var(--bgbutton);
+    backdrop-filter: blur(5px);
+    transition-duration: 0.1s;
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+button:hover {
+    cursor:pointer;
+    filter:brightness(1.05) drop-shadow(0px 0px 2px var(--bgbutton));
+}
+button:active {
+    background-color: var(--bgborder);
+}
+
+select {
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #f5f5f5, #ececec);
+    border: 1px solid #adadad96;
+    box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.6), 0px 0px 3px rgba(0, 0, 0, 0.2);
+    padding:5px 10px;
+    outline:none;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    transition:all 0.3s ease-in-out;
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.8);
+}
+select:hover {
+    background: linear-gradient(to bottom, #f5f5f5, #daf4ff);
+    border: 1px solid #72ccf096;
+}
+
+.project-sub-tab a {
+    display:block;
+    width:100%;
+    text-decoration: none;
+    height:100%;
+    color:inherit;
+}

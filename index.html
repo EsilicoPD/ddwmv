@@ -1,0 +1,258 @@
+<!-- 
+    
+    << DDWMV's Website Source Code >>
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>DDWMV</title> <!-- Website title -->
+        
+        <meta charset="UTF-8"> <!-- UTF-8 Encoding -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!-- Font Awesome 6 CSS -->
+
+
+        <link rel="stylesheet" type="text/css" href="tabs.css">
+        <link rel="stylesheet" type="text/css" href="logo.css">
+        <link rel="stylesheet" type="text/css" href="navbar.css">
+        <link rel="stylesheet" type="text/css" href="multi.css">
+        <link rel="stylesheet" type="text/css" href="modal-sidebar.css">
+        <style>
+            body {
+                margin:0;
+    background: radial-gradient(circle, rgba(240,248,255,0.9) 0%, rgb(253, 254, 255) 100%), 
+                linear-gradient(to bottom, #f0f8ff, #d4e4f5);
+
+                font-size: 1rem;
+                text-align: center;
+                font-family: "Cascadia Mono", "Cascadia Code", "Consolas", "Courier New", monospace;
+            }
+            body {
+    background: radial-gradient(circle, rgba(236, 236, 236, 0.979) 0%, rgb(255, 255, 255) 100%), 
+                linear-gradient(to bottom, #2a2e38, #181b22);
+}
+
+            
+            h1, h2, h3, h4, h5, h6 {
+    margin: 1px;
+    padding: 0.56em 0; 
+    line-height: 1.47;
+}
+
+h1 { font-size: clamp(1.6rem, 2.5vw, 1.9rem); font-weight: 700; padding: 0.1em 0; }
+h2 { font-size: clamp(1.3rem, 2vw, 1.7rem); font-weight: 600; padding: 0.1em 0; }
+h3 { font-size: clamp(1.1rem, 1.8vw, 1.5rem); font-weight: 500; padding: 0.1em 0; }
+h4, h5, h6 { font-size: clamp(1rem, 1.4vw, 1.3rem); font-weight: 400; padding: 0.1em 0; }
+
+p {
+    font-size: clamp(0.9rem, 1.6vw, 1rem);
+    font-weight: 374;
+}
+
+
+
+            .grid-container {
+                margin: auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column widget layout */
+    gap: 10px;
+            align-content: stretch;
+            }
+            .grid-container-inside {
+                width:100%;
+                margin:auto;
+                display: grid;
+                height:100%;
+                grid-template-columns:1fr 1fr;
+                gap:5px;
+                overflow:hidden;
+            }
+
+            @media (max-width:640px) {
+                .grid-container {
+                    grid-template-columns:1fr;
+                    gap:3px;
+                }
+                .grid-container-inside {
+                    grid-template-columns:1fr !important;
+                    gap:3px;
+                }
+            }
+
+            :root {
+    --gradient-text-1: #023a68;
+    --gradient-text-2: #0a80c4;
+}
+
+.glow-effect {
+    background: linear-gradient(to bottom, var(--gradient-text-1), var(--gradient-text-2));
+    background-size: 150% 150%;
+    background-clip: text;
+    color: transparent;
+    
+    text-shadow: 0px 0px 0px transparent;
+    transition: text-shadow 0.5s ease-in-out;
+}
+
+.glow-effect:hover {
+    cursor:pointer;
+    animation: gradient-glow 2s infinite alternate ease-in-out;
+}
+
+@keyframes gradient-glow {
+    0% { 
+        background-position: 0% 0%;
+        text-shadow: 0px 0px 15px #023a68, 0px 0px 20px #023a68;
+    }
+    100% { 
+        background-position: 100% 100%;
+        text-shadow: 0px 0px 15px #0a80c4, 0px 0px 20px #0a80c4;
+    }
+}
+
+.gap-wrapper {
+    display:grid;
+    gap:5px;
+}
+
+
+        </style>
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navmenu"><a href="index.html">Home</a></div>
+            <div class="navmenu"><a href="ad.html">Explore</a></div>
+            <div class="navmenu"><a href="ad.html">Create</a></div>
+            <div class="navmenu"><a href="ad.html">Forums</a></div>
+            <div class="navmenu"><a href="ad.html">Users</a></div>
+            <input type="search" class="searchbar" placeholder="Search...">
+            <div style="display:flex;gap:12px;margin-left:5px;">
+                <i class="fa-solid fa-bars" id="openMenu" onclick="openSidebar()" style="cursor:pointer;"></i>
+                <i class="fa-solid fa-gear" id="openSettings"></i>
+            </div>
+        </nav>
+
+
+
+        <header class="gloss-tab" style="background-color:rgba(255, 255, 255, 0.13);padding:5px;">
+            <img src="logo1.png" alt="DDWMV Logo" class="logo">
+        </header>
+    <div class="grid-container">
+            <div>
+                <div class="tab" type="header">
+                    <h1>Welcome to <span class="glow-effect">DDWMV</span>!
+                    </h1>
+                    <h4>A fictional company site and a library - collection of tools and projects, and a place where we develop packages.</h4>
+                </div>
+                <div class="gloss-tab">
+                    <h2>Information</h2>
+                    <p><strong>What is DDWMV? </strong>It’s basically a bunch of tools, libraries, and random projects I’ve put together. Some are useful, some are experiments, and some exist just because I thought, "Why not?" If you’re into coding, tweaking things, or just exploring, you might find something interesting here.</p>
+                    <div class="sub-tab" style="text-align: left;padding:20px 20px;display:grid;gap:5px;overflow-y:scroll;height:400px;">
+                        <div style="display:flex;flex-direction: row;gap:15px;align-items: center;">
+                            <h2>📦Packages</h2>
+                        </div>
+                        <p>Packages are a collection of libraries and tools designed to enchance development. DDWMV offers these to help you access a ton of libraries in development!</p>
+                        <hr>
+                        <div style="display:flex;flex-direction: row;gap:15px;align-items: center;">
+                            <h2>📚Libraries</h2>
+                        </div>
+                        <p>Libraries are a collection of tools, code and utilities designed to make development <i>smoother</i> and more <i>fun</i>! In DDWMV, our libraries are built to speed up coding, enchance creativity, and give you access to COOL features!</p>
+                        <hr>
+                        <div style="display:flex;flex-direction: row;gap:15px;align-items: center;">
+                            <h2>📂Directories and Databases</h2>
+                        </div>
+                        <p>Directories and Databases are a thing to store all the data in DDWMV, like a bunch of programs, big projects and web applications. It's a really nice skeleton to store things in DDWMV! It uses TiDB to manage <strong>massive</strong> files.</p>
+                        <hr>
+                        <div style="display:flex;flex-direction: row;gap:15px;align-items: center;">
+                            <h2>🏢Workspaces</h2>
+                            <div style="padding:6px 10px;border-radius: 5px;" class="glass">
+                                <input type="checkbox" id="chckbox"> Private workspace?
+                            </div>
+                        </div>
+                        <p id="workspace-paragraph1">DDWMV Workspaces are created to organize your projects and work into a workspace. In this case, when your workspace is public, you'll have the link to the workspace for another people to access 'em.</p>
+                        <p style="display: none;" id="workspace-paragraph2">Private workspaces in DDWMV are <i>exclusively</i> yours. No one else can access or share your workspace.</p>
+                        <script>
+                            const Checkbox = document.getElementById("chckbox");
+                            const workspaceparagraph1 = document.getElementById("workspace-paragraph1");
+                            const workspaceparagraph2 = document.getElementById("workspace-paragraph2");
+                            
+                            Checkbox.addEventListener("change",function() {
+                                if (this.checked) {
+                                    workspaceparagraph1.style.display = "none";
+                                    workspaceparagraph2.style.display = "block";
+                                } else {
+                                    workspaceparagraph1.style.display = "block";
+                                    workspaceparagraph2.style.display = "none";
+                                }
+                            });
+                        </script>
+                    </div>
+                    
+                </div>
+            </div>
+            <div>
+                <main class="gloss-tab">
+                    <h1>DDWMV Tab</h1>
+                    <div class="sub-tab" style="padding:10px 10px">
+                        <h4 style="margin-bottom:4px">Projects</h4>
+                        <div style="display:flex;flex-wrap: wrap;gap:5px;">
+                            <!-- <div class="project-sub-tab"><a href="#">Database Explorer</a></div> -->
+                            <p>No projects are found in the DDWMV database. We're just setting up it, not finishing it. </p>
+                        </div>
+                    </div>
+                    <div class="sub-tab">
+                        <h4>Image Gallery</h4>
+                        <p>Dang, wait for the database to show! There's no directories and databases to show the image gallery.<strong> Our website is on W.I.P.</strong></p>
+                    </div>
+                </main>
+                <footer class="tab">
+                    <p class="footers">&copy; 2024-2025 DDWMV. <a href="termsofservice.html">Terms of Service</a></p>
+                </footer>
+            </div>
+    </div>
+
+
+
+
+    <!-- Sidebar -->
+    <div class="sidebar-modal">
+        <div class="sidebar-modal-content" onclick="event.stopPropagation();">
+            <i class="fa-solid fa-x close-btn" onclick="closeSidebar()" style="float:right;position:relative;cursor: pointer;"></i>
+            <h2>Property</h2>
+        </div>
+    </div>
+
+
+        <script>
+        function openSidebar() {
+            document.querySelector(".sidebar-modal").classList.add("active");
+            document.querySelector(".sidebar-modal-content").classList.add("active");
+        }
+
+        function closeSidebar() {
+            const sidebarModal = document.querySelector(".sidebar-modal");
+            const sidebarContent = document.querySelector(".sidebar-modal-content");
+            
+            sidebarContent.classList.remove("active");
+
+            setTimeout(() => {
+                sidebarModal.classList.remove("active");
+            }, 100);
+        }
+
+        </script>
+        
+    
+        
+        <style>
+            
+        </style>
+    </body>
+    <div style="height:80px"></div>
+</html>
