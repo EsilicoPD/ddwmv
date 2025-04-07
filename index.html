@@ -55,6 +55,14 @@
         filter:hue-rotate(-10deg);
     }
 }
+        @keyframes hue-shit {
+            0% {
+                filter:hue-rotate(0deg);
+            }
+            100% {
+                filter:hue-rotate(360deg);
+            }
+        }
         * {
             font-family: 'Segoe UI', sans-serif;
             transition: all 0.3s ease;  
@@ -136,9 +144,15 @@
             0% { transform: translateY(100%); opacity: 0.3; }
             100% { transform: translateY(0); opacity: 1; }
         }
+        .chaos-fill {
+            width:100%;
+            position:fixed;
+            height:100%;
+        }
     </style>
 </head>
 <body>
+    <div class="chaos-fill"></div>
     <div class="img-library">
         <img src="logo1.png" alt="Image Header" class="img-header">
         <img src="header.png" alt="Image Header" class="img-header">
@@ -279,6 +293,7 @@
             explodeButton.addEventListener('click', () => {
                 alert('Explode button clicked! Self destructing in 3... 2... 1...');
                 document.body.style.animation = 'shake 0.5s ease-in-out infinite';
+                document.getElementsByClassName('img-header')[0].style.animation = 'hue-shit 0.5s ease-in-out infinite alternate';
                 setInterval(() => {
         const newDiv = document.createElement('div');
         newDiv.style.position = 'absolute';
