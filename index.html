@@ -146,6 +146,7 @@
             0% { transform: translateY(100%); opacity: 0.3; }
             100% { transform: translateY(0); opacity: 1; }
         }
+<<<<<<< HEAD
         .chaos-fill, .chaos-fill:hover {
             width:100%;
             position:fixed;
@@ -154,11 +155,23 @@
             left:0;
             z-index:111111111;
             pointer-events: none;
+=======
+        .chaos-fill {
+            all:unset;
+            width:100%;
+            position:fixed;
+            height:100%;
+            
+>>>>>>> 82053cb966a8e8afda420fee7c11b9d18e0385bc
         }
     </style>
 </head>
 <body>
+<<<<<<< HEAD
     <main class="chaos-fill"></main>
+=======
+    <div class="chaos-fill"></div>
+>>>>>>> 82053cb966a8e8afda420fee7c11b9d18e0385bc
     <div class="img-library">
         <img src="logo1.png" alt="Image Header" class="img-header">
         <img src="header.png" alt="Image Header" class="img-header">
@@ -299,8 +312,12 @@
             explodeButton.addEventListener('click', () => {
                 alert('Explode button clicked! Self destructing in 3... 2... 1...');
                 document.body.style.animation = 'shake 0.5s ease-in-out infinite';
+<<<<<<< HEAD
                 document.body.style.background = 'linear-gradient(to bottom right,#470000 0%,#ffa946 100%)';
                 document.getElementsByClassName('chaos-fill')[0].style.animation = 'hue-shit 5.5s ease-in-out infinite alternate';
+=======
+                document.getElementsByClassName('img-header')[0].style.animation = 'hue-shit 0.5s ease-in-out infinite alternate';
+>>>>>>> 82053cb966a8e8afda420fee7c11b9d18e0385bc
                 setInterval(() => {
         const newDiv = document.createElement('div');
         newDiv.style.position = 'absolute';
