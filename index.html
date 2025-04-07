@@ -1,259 +1,363 @@
-<!-- 
-    
-    << DDWMV's Website Source Code >>
-
--->
-
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <title>DDWMV</title> <!-- Website title -->
-        
-        <meta charset="UTF-8"> <!-- UTF-8 Encoding -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive -->
-        <link rel="icon" type="image/x-icon" href="favicon.png"> <!-- Favicon -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!-- Font Awesome 6 CSS -->
-
-
-        <link rel="stylesheet" type="text/css" href="tabs.css">
-        <link rel="stylesheet" type="text/css" href="logo.css">
-        <link rel="stylesheet" type="text/css" href="navbar.css">
-        <link rel="stylesheet" type="text/css" href="multi.css">
-        <link rel="stylesheet" type="text/css" href="modal-sidebar.css">
-        <style>
-            body {
-                margin:0;
-    background: radial-gradient(circle, rgba(240,248,255,0.9) 0%, rgb(253, 254, 255) 100%), 
-                linear-gradient(to bottom, #f0f8ff, #d4e4f5);
-
-                font-size: 1rem;
-                text-align: center;
-                font-family: "Cascadia Mono", "Cascadia Code", "Consolas", "Courier New", monospace;
-            }
-            body {
-    background: radial-gradient(circle, rgba(236, 236, 236, 0.979) 0%, rgb(255, 255, 255) 100%), 
-                linear-gradient(to bottom, #2a2e38, #181b22);
-}
-
-            
-            h1, h2, h3, h4, h5, h6 {
-    margin: 1px;
-    padding: 0.56em 0; 
-    line-height: 1.47;
-}
-
-h1 { font-size: clamp(1.6rem, 2.5vw, 1.9rem); font-weight: 700; padding: 0.1em 0; }
-h2 { font-size: clamp(1.3rem, 2vw, 1.7rem); font-weight: 600; padding: 0.1em 0; }
-h3 { font-size: clamp(1.1rem, 1.8vw, 1.5rem); font-weight: 500; padding: 0.1em 0; }
-h4, h5, h6 { font-size: clamp(1rem, 1.4vw, 1.3rem); font-weight: 400; padding: 0.1em 0; }
-
-p {
-    font-size: clamp(0.9rem, 1.6vw, 1rem);
-    font-weight: 374;
-}
-
-
-
-            .grid-container {
-                margin: auto;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two-column widget layout */
-    gap: 10px;
-            align-content: stretch;
-            }
-            .grid-container-inside {
-                width:100%;
-                margin:auto;
-                display: grid;
-                height:100%;
-                grid-template-columns:1fr 1fr;
-                gap:5px;
-                overflow:hidden;
-            }
-
-            @media (max-width:640px) {
-                .grid-container {
-                    grid-template-columns:1fr;
-                    gap:3px;
-                }
-                .grid-container-inside {
-                    grid-template-columns:1fr !important;
-                    gap:3px;
-                }
-            }
-
-            :root {
-    --gradient-text-1: #023a68;
-    --gradient-text-2: #0a80c4;
-}
-
-.glow-effect {
-    background: linear-gradient(to bottom, var(--gradient-text-1), var(--gradient-text-2));
-    background-size: 150% 150%;
-    background-clip: text;
-    color: transparent;
-    
-    text-shadow: 0px 0px 0px transparent;
-    transition: text-shadow 0.5s ease-in-out;
-}
-
-.glow-effect:hover {
-    cursor:pointer;
-    animation: gradient-glow 2s infinite alternate ease-in-out;
-}
-
-@keyframes gradient-glow {
-    0% { 
-        background-position: 0% 0%;
-        text-shadow: 0px 0px 15px #023a68, 0px 0px 20px #023a68;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            background:linear-gradient(to bottom right,#00475c 0%,#46daff 100%);
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            gap:5px;
+            height: 100vh;
+            width: 98vw;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            justify-content: center;
+        }
+        @keyframes shake {
+    10% {
+        transform: translateX(-10px) translateY(-5px) rotate(5deg);
+        filter:hue-rotate(0deg);
     }
-    100% { 
-        background-position: 100% 100%;
-        text-shadow: 0px 0px 15px #0a80c4, 0px 0px 20px #0a80c4;
+    20% {
+        transform: translateX(10px) translateY(5px);
+    }
+    30% {
+        transform: translateX(-10px) translateY(-5px);
+    }
+    40% {
+        transform: translateX(10px) translateY(-15px)  rotate(-5deg);
+    }
+    50% {
+        transform: translateX(-5px) translateY(10.5px);
+    }
+    60% {
+        transform: translateX(5px) translateY(-2.5px);
+    }
+    70% {
+        transform: translateX(-5px) translateY(2.5px)  rotate(2deg);
+    }
+    80% {
+        transform: translateX(5px) translateY(2.5px);
+    }
+    90% {
+        transform: translateX(-2px) translateY(-1px);
+    }
+    100% {
+        transform: translateX(0) translateY(0) rotate(-2deg);
+        filter:hue-rotate(-10deg);
     }
 }
+        * {
+            font-family: 'Segoe UI', sans-serif;
+            transition: all 0.3s ease;  
+        }
+        h1,h2,h3,h4,h5,h6,p,span {
+            margin: 3px;
 
-.gap-wrapper {
-    display:grid;
-    gap:5px;
-}
+        }
+        div {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.164));
+            backdrop-filter: blur(5px);
+            padding:10px;
+            align-items: stretch;
+            border-radius: 7px;
+            width:90%;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.151);
+            transition:all 0.3s ease;
+        }
+        div:hover {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.281));
+            padding:15px 10px;
+        }
+        button {
+            background: linear-gradient(to bottom right, #00668f, #0d9fcc);
+            border-radius: 5px;
+            border:0;
+            font-size:18px;
+            position: relative;
+            padding:6px 10px;
+            transition:all 0.2s ease-in-out;
+            color:white;
+        }
+        button:hover {
+            filter:brightness(1.12);
+            cursor:pointer;
+        }
+        button::before {
+            content:"";
+            position:absolute;
+            width:100%;
+            opacity:0.3;
+            height:50%;
+            background: linear-gradient(to top, #ffffff4b, #ffffffff);
+            top: 0;
+            left: 0;
+            border-radius: 5px 5px 0px 0px;
+        }
+        .img-header {
+            width:100%;
+            height: 300px;
+            object-fit: cover; 
+            flex-basis: 200px;
+            flex-grow: 1;
+            border-radius: 5px;
+            position: relative;
+            display: block;
+            margin: auto;
+        }
+        .img-library {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            height:300px;
+            overflow-y: auto;
+            justify-content: center;
+            align-items: center;
+        }
+        @keyframes blink {
+            from, to {
+                border-right: 2px solid rgba(241, 241, 241, 0.411);
+            }
+            50% {
+                border-right: transparent;
+            }
+        }
 
-
-        </style>
-    </head>
-
-    <body>
-        <!-- Navbar -->
-        <nav class="navbar">
-            <div class="navmenu"><a href="index.html">Home</a></div>
-            <div class="navmenu"><a href="ad.html">Explore</a></div>
-            <div class="navmenu"><a href="ad.html">Create</a></div>
-            <div class="navmenu"><a href="ad.html">Forums</a></div>
-            <div class="navmenu"><a href="ad.html">Users</a></div>
-            <input type="search" class="searchbar" placeholder="Search...">
-            <div style="display:flex;gap:12px;margin-left:5px;">
-                <i class="fa-solid fa-bars" id="openMenu" onclick="openSidebar()" style="cursor:pointer;"></i>
-                <i class="fa-solid fa-gear" id="openSettings"></i>
-            </div>
-        </nav>
-
-
-
-        <header class="gloss-tab" style="background-color:rgba(255, 255, 255, 0.13);padding:5px;">
-            <img src="logo1.png" alt="DDWMV Logo" class="logo">
-        </header>
-    <div class="grid-container">
-            <div>
-                <div class="tab" type="header">
-                    <h1>Welcome to <span class="glow-effect">DDWMV</span>!
-                    </h1>
-                    <h4>A fictional company site and a library - collection of tools and projects, and a place where we develop packages.</h4>
-                </div>
-                <div class="gloss-tab">
-                    <h2>Information</h2>
-                    <p><strong>What is DDWMV? </strong>It’s basically a bunch of tools, libraries, and random projects I’ve put together. Some are useful, some are experiments, and some exist just because I thought, "Why not?" If you’re into coding, tweaking things, or just exploring, you might find something interesting here.</p>
-                    <div class="sub-tab" style="text-align: left;padding:20px 20px;display:grid;gap:5px;overflow-y:scroll;height:400px;">
-                        <div style="display:flex;flex-direction: row;gap:15px;align-items: center;">
-                            <h2>📦Packages</h2>
-                        </div>
-                        <p>Packages are a collection of libraries and tools designed to enchance development. DDWMV offers these to help you access a ton of libraries in development!</p>
-                        <hr>
-                        <div style="display:flex;flex-direction: row;gap:15px;align-items: center;">
-                            <h2>📚Libraries</h2>
-                        </div>
-                        <p>Libraries are a collection of tools, code and utilities designed to make development <i>smoother</i> and more <i>fun</i>! In DDWMV, our libraries are built to speed up coding, enchance creativity, and give you access to COOL features!</p>
-                        <hr>
-                        <div style="display:flex;flex-direction: row;gap:15px;align-items: center;">
-                            <h2>📂Directories and Databases</h2>
-                        </div>
-                        <p>Directories and Databases are a thing to store all the data in DDWMV, like a bunch of programs, big projects and web applications. It's a really nice skeleton to store things in DDWMV! It has 5TB of storage to manage <strong>massive</strong> files.</p>
-                        <hr>
-                        <div style="display:flex;flex-direction: row;gap:15px;align-items: center;">
-                            <h2>🏢Workspaces</h2>
-                            <div style="padding:6px 10px;border-radius: 5px;" class="glass">
-                                <input type="checkbox" id="chckbox"> Private workspace?
-                            </div>
-                        </div>
-                        <p id="workspace-paragraph1">DDWMV Workspaces are created to organize your projects and work into a workspace. In this case, when your workspace is public, you'll have the link to the workspace for another people to access 'em.</p>
-                        <p style="display: none;" id="workspace-paragraph2">Private workspaces in DDWMV are <i>exclusively</i> yours. No one else can access or share your workspace.</p>
-                        <script>
-                            const Checkbox = document.getElementById("chckbox");
-                            const workspaceparagraph1 = document.getElementById("workspace-paragraph1");
-                            const workspaceparagraph2 = document.getElementById("workspace-paragraph2");
-                            
-                            Checkbox.addEventListener("change",function() {
-                                if (this.checked) {
-                                    workspaceparagraph1.style.display = "none";
-                                    workspaceparagraph2.style.display = "block";
-                                } else {
-                                    workspaceparagraph1.style.display = "block";
-                                    workspaceparagraph2.style.display = "none";
-                                }
-                            });
-                        </script>
-                    </div>
-                    
-                </div>
-            </div>
-            <div>
-                <main class="gloss-tab">
-                    <h1>DDWMV Tab</h1>
-                    <div class="sub-tab" style="padding:10px 10px">
-                        <h4 style="margin-bottom:4px">Projects</h4>
-                        <div style="display:flex;flex-wrap: wrap;gap:5px;">
-                            <!-- <div class="project-sub-tab"><a href="#">Database Explorer</a></div> -->
-                            <p>No projects are found in the DDWMV database. We're just setting up it, not finishing it. </p>
-                        </div>
-                    </div>
-                    <div class="sub-tab">
-                        <h4>Image Gallery</h4>
-                        <p>Dang, wait for the database to show! There's no directories and databases to show the image gallery.<strong> Our website is on W.I.P.</strong></p>
-                    </div>
-                </main>
-                <footer class="tab">
-                    <p class="footers">&copy; 2024-2025 DDWMV. <a href="termsofservice.html">Terms of Service</a></p>
-                </footer>
-            </div>
+        @keyframes flyIn {
+            0% { transform: translateY(100%); opacity: 0.3; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="img-library">
+        <img src="logo1.png" alt="Image Header" class="img-header">
+        <img src="header.png" alt="Image Header" class="img-header">
     </div>
-
-
-
-
-    <!-- Sidebar -->
-    <div class="sidebar-modal">
-        <div class="sidebar-modal-content" onclick="event.stopPropagation();">
-            <i class="fa-solid fa-x close-btn" onclick="closeSidebar()" style="float:right;position:relative;cursor: pointer;"></i>
-            <h2>Property</h2>
-        </div>
-    </div>
-
-
+    <div>
+        <h1><span id="text" style="animation: blink 0.75s step-start 0s infinite;"></span></h1>
+        <h3>A fictional company site and a library - collection of tools and projects, and a place where we develop packages.</h3>
+        <p style="opacity:0.5;">© 2024-2025 DDWMV</p>
         <script>
-        function openSidebar() {
-            document.querySelector(".sidebar-modal").classList.add("active");
-            document.querySelector(".sidebar-modal-content").classList.add("active");
-        }
+            const welcome_text = document.getElementById('text');
+            const keyboard_sound = new Audio('keyboard-chspsil-146640.mp3');
+            const backspace_keyboard_sound = new Audio('keyboard-single-click.mp3');
+            document.addEventListener("DOMContentLoaded", () => {
+                
+                const button = document.getElementById("disappear-rn");
 
-        function closeSidebar() {
-            const sidebarModal = document.querySelector(".sidebar-modal");
-            const sidebarContent = document.querySelector(".sidebar-modal-content");
-            
-            sidebarContent.classList.remove("active");
+                button.addEventListener("click", function() {
+                    typingEffect(welcome_text, texts,61, 4000);
+                    button.remove();
+            });
+            });
+            // change your list of texts here if you want.
 
-            setTimeout(() => {
-                sidebarModal.classList.remove("active");
-            }, 100);
-        }
+            const texts = [
+                "Welcome to DDWMV!",
+                "Development is cool",
+                "DDWMV is a fictional company",
+                "I love buttons!",
+                "Unexpected error occurred at this header. (0xcc00000f)",
+                "This is a library, but you need to download it!",
+                "Decent UI needs to be obtained in your website!",
+                "I like Python.",
+                "DDWMV is the golden!",
+                "DDWMV is the best!",
+                "Peak customization energy..",
+                `We called x32 "x86" because of Intel's 8086 CPU family. 64-bit is called "x64" because of AMD's 64-bit extension to the x86 architecture.`,
+                "Everyone SETTLE UP!",
+                "Watch a movie!",
+                "Don't be greedy, paywalls might start haunting users.",
+                "Design is important.",
+                "Pffftttt...",
+                "See you later!"
+            ];
+            const rare_texts = [
+                "Congratulations! You found a rare text!",
+                "What are you doing here?",
+                "This is a secret message!",
+                `Resolution: ${screen.width}x${screen.height}`,
+                "Hacker!",
+                "You are a genius!",
+                "Uhhh..."
+            ];
 
+            function getRandomText() {
+                const chance = Math.random();
+                console.log(`Your chance is: ${chance}`);
+                if (chance < 0.3) {
+                    return rare_texts[Math.floor(Math.random() * rare_texts.length)];
+                    
+                } else {
+                    return texts[Math.floor(Math.random() * texts.length)];
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            function typingEffect(element, texts, delay, reverseDelay, crntIndex = 0) {
+
+                if (crntIndex >= texts.length) {
+                    crntIndex = 0;
+                }
+                let text = getRandomText();
+                console.log(`Typing text: ${text}`);
+                let index = 0;
+
+                const interval = setInterval(() => {
+                    if (index < text.length) {
+                        element.textContent += text.charAt(index);
+                        index++;
+
+                        keyboard_sound.play();
+                        keyboard_sound.currentTime = 0;
+                    } else {
+                        clearInterval(interval);
+                        setTimeout(() => {
+                            reverseTypingEffect(element, delay, text, reverseDelay, crntIndex);
+                        }, reverseDelay);
+                    }
+                }, delay);
+            }
+            function reverseTypingEffect(element, delay, text, reverseDelay, crntIndex) {
+                let textz = element.textContent; // ignore this useless piece of shit
+                let index = text.length - 1;
+                const interval = setInterval(() => {
+                    if (index >= 0) {
+                        element.textContent = text.substring(0, index);
+                        index--;
+
+                        backspace_keyboard_sound.play();
+                        backspace_keyboard_sound.currentTime = 0;
+                    } else {
+                        clearInterval(interval);
+                        setTimeout(() => {
+                            typingEffect(element, texts, delay, reverseDelay, crntIndex + 1);
+                        }, reverseDelay);
+                    }
+                }, delay);
+            }
         </script>
+    </div>
+    <div>
+        <p>All libraries and tools of DDWMV have been arranged to a special program. This is where you can explore projects, assets, and more! Did DDWMV upgrade from a boring static site to an entire <i>ecosystem</i>? Well, let's find out..</p>
+    </div>
+    <div>
+        <button><i class="fa-solid fa-download"></i> Download</button>
+        <button><i class="fa-solid fa-bomb"></i> Explode</button>
+        <script>
+            const downloadButton = document.querySelector('button:nth-of-type(1)');
+            const explodeButton = document.querySelector('button:nth-of-type(2)');
+
+            downloadButton.addEventListener('click', () => {
+                alert('Download button clicked!');
+            });
+
+            explodeButton.addEventListener('click', () => {
+                alert('Explode button clicked! Self destructing in 3... 2... 1...');
+                document.body.style.animation = 'shake 0.5s ease-in-out infinite';
+                setInterval(() => {
+        const newDiv = document.createElement('div');
+        newDiv.style.position = 'absolute';
+        newDiv.style.zIndex = 9999;
+        newDiv.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}88`;
+        newDiv.style.top = `${Math.random() * window.innerHeight}px`;
+        newDiv.style.left = `${Math.random() * window.innerWidth}px`;
+        newDiv.style.width = `${Math.random() * 480 + 250}px`; 
+        newDiv.style.height = `${Math.random() * 40 + 130}px`;
+        newDiv.style.display = 'flex';
+        newDiv.style.justifyContent = 'center';
+        newDiv.style.alignItems = 'center';
+        newDiv.style.animation = 'shake 0.5s infinite alternate';
+        newDiv.style.borderRadius = '20px';
+        newDiv.style.color = 'white';
+        newDiv.style.fontWeight = 'bold';
+        newDiv.style.fontSize = `${Math.random() * 10 + 16}px`;
+        newDiv.style.animation = 'flyIn 1s ease-out';
         
-    
+        const randomTexts = [
+            "bro thought he was tuff WAIT MANGO UTLRA PHONK TUFF BOIII😂✋✋",
+            "LIKE FOR PART 3😂😂🤣🤣🥰🥰",
+            "EDIT: MOM IM FAMOUS🗿🗿🗿🗿🗿",
+            "Packgod: starts playing ultra mega tuff arabic phonk Boii shut your google chrome chromosome chicken bone funny gnome doug dimadome ahh up BOII-🤣🤣✌️✌️",
+            "𝐛𝐨𝐢𝐢 𝐭𝐡𝐢𝐬 𝐢𝐬 𝐬𝐨 𝐭𝐮𝐟𝐟",
+            "Floppy disk rage 1010101010101 ULTRA MEGA TUFF ARABIC PHONK GET OUT PHONK BEAT",
+            "TS PMO ICL SYBAU SYBAU SYBAU ICL SYBAU SYBAU SYBAU AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        ];
+        newDiv.textContent = randomTexts[Math.floor(Math.random() * randomTexts.length)];
         
-        <style>
-            
-        </style>
-    </body>
-    <div style="height:80px"></div>
+        const randomGif = document.createElement('img');
+        const gifs = [
+            'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExam1oZXVkZ3ZxMjJ5bHM2ZjVkc2I3cGl0cG0yMmlpcG9veG5pZnRsYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sIIhZliB2McAo/giphy.gif',
+            'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDd0YXZ4MDl3cjMzaTNqa3EzOG1mY2M1ODhvMTV2M2Z3cGp2ZXNiaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Vuw9m5wXviFIQ/giphy.gif',
+            'https://tenor.com/view/skull-meme-cringe-tiktok-skullcringe-gif-3626565926054747463.gif',
+            'https://tenor.com/view/windows-95-windows-9x-windows-98-windows-2000-windows-me-gif-9807777337782179350.gif',
+            'logo1.png',
+            'https://tenor.com/view/troll-face-gif-14651969146790610855.gif',
+            'https://tenor.com/view/sigma-joker-respect-moment-phonk-edit-gif-6517909916720364824.gif',
+            'https://tenor.com/view/error-gif-26155260.gif'
+        ];
+        randomGif.src = gifs[Math.floor(Math.random() * gifs.length)];
+        randomGif.style.width = '80px';
+        randomGif.style.height = '80px';
+        randomGif.style.marginLeft = '10px';
+        randomGif.style.animation = 'shake 0.3s infinite';
+        randomGif.onload = () => {
+            for (let i = 0; i < 2; i++) {
+            const clonedGif = randomGif.cloneNode(true);
+            newDiv.appendChild(clonedGif);
+            document.body.appendChild(randomGif);
+            }
+            document.body.appendChild(newDiv);
+        };
+        const paragraph_pillars = document.createElement('p');
+        paragraph_pillars.textContent = "ERROR ERROR ERORREa ERROR ERROR ERORREa  ERROR ERROR ERORREa ERROR ERROR ERORREa ERROR ERROR ERORREa ERROR ERROR ERORREa ERROR ERROR ERORREa ERROR ERROR ERORREa ERROR ERROR ERORREa ERROR ERROR ERORREa ERROR ERROR ERORREa ERROR ERROR ERORREa ERROR ERROR ERORREa ERROR ERROR ERORREa ERROR ERROR ERORREa ERROR ERROR ERORREa ERROR ERROR ERORREa " + Math.floor(Math.random() * 100) + "%";
+        
+
+        const win7error = document.createElement('img');
+
+        win_errors = [
+            'error.png',
+            'error1.png',
+            'https://media.tenor.com/2bYj1cJdW4EAAAAC/windows-7-error.gif',
+            'https://media.tenor.com/8m5xq6a9n0UAAAAC/windows-7-error.gif',
+            'https://media.tenor.com/8m5xq6a9n0UAAAAC/windows-7-error.gif'
+        ];
+        win7error.src = win_errors[Math.floor(Math.random() * win_errors.length)];
+        win7error.style.position = 'absolute';
+        win7error.style.top = `${Math.random() * window.innerHeight}px`;
+        win7error.style.left = `${Math.random() * window.innerWidth}px`;
+
+        document.body.appendChild(randomGif);
+        document.body.appendChild(paragraph_pillars);
+        document.body.appendChild(win7error);
+                }, 120);
+            });
+        </script>
+        <button title="Due to browser security reasons, you can click on this button to show the header text and the keyboard sound." style="opacity:0.5;" id="disappear-rn">Click this button to show the header text</button>
+    </div>
+</body>
 </html>
