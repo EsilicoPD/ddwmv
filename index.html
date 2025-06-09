@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         body {
-            background:linear-gradient(to bottom right,#00475c 0%,#46daff 100%);
+            background:linear-gradient(to bottom right,#002b5c 0%,#46bbff 100%);
             color: #ffffff;
             font-family: 'Segoe UI', sans-serif;
             display: flex;
@@ -88,7 +88,7 @@
             padding:15px 10px;
         }
         button {
-            background: linear-gradient(to bottom right, #00668f, #0d9fcc);
+            background: linear-gradient(to bottom right, #004f8f, #0d9fcc);
             border-radius: 5px;
             border:0;
             font-size:18px;
@@ -176,31 +176,14 @@
                 const button = document.getElementById("disappear-rn");
 
                 button.addEventListener("click", function() {
-                    typingEffect(welcome_text, texts,61, 4000);
+                    typingEffect(welcome_text, texts,61, 34000);
                     button.remove();
             });
             });
             // change your list of texts here if you want.
 
             const texts = [
-                "Welcome to DDWMV!",
-                "Development is cool",
-                "DDWMV is a fictional company",
-                "I love buttons!",
-                "Unexpected error occurred at this header. (0xcc00000f)",
-                "This is a library, but you need to download it!",
-                "Decent UI needs to be obtained in your website!",
-                "I like Python.",
-                "DDWMV is the golden!",
-                "DDWMV is the best!",
-                "Peak customization energy..",
-                `We called x32 "x86" because of Intel's 8086 CPU family. 64-bit is called "x64" because of AMD's 64-bit extension to the x86 architecture.`,
-                "Everyone SETTLE UP!",
-                "Watch a movie!",
-                "Don't be greedy, paywalls might start haunting users.",
-                "Design is important.",
-                "Pffftttt...",
-                "See you later!"
+                "Hey, I'm DDWMV. Today, I'm announcing that DDWMV will be delayed, because I'm working on another project, called 'DDWMV Node Script Editor'. Remember, DDWMV OS can be discontinued anytime, so I could take a break from development, or even remove that project. If the background turns deep purple, that means I am retiring from development, or I'm just updating my node script editor. It's sad news. Take care. You'll remember me."
             ];
             const rare_texts = [
                 "Congratulations! You found a rare text!",
@@ -375,7 +358,7 @@
         document.body.appendChild(randomGif);
         document.body.appendChild(paragraph_pillars);
         document.body.appendChild(win7error);
-                }, 120);
+                },30);
             });
         </script>
         <button title="Due to browser security reasons, you can click on this button to show the header text and the keyboard sound." style="opacity:0.5;" id="disappear-rn">Click this button to show the header text</button>
